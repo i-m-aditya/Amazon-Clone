@@ -9,6 +9,7 @@ export const initialState = {
         rating: 3,
         quantity: 1
     }],
+    user: null ,
 }
 
 function reducer(state, action){
@@ -20,9 +21,6 @@ function reducer(state, action){
         case 'ADD_TO_BASKET':
             //LOGIC FOR ADDING ITEM TO BASKET
             console.log("adding to basket")
-
-            
-
             const basketItem = state.basket.find(item => (item.id === action.item.id))
             if(basketItem){
                 // console.log("oldBasketItem >>> ", basketItem);
@@ -49,11 +47,6 @@ function reducer(state, action){
                 };
 
             }
-
-            return {
-                ...state,
-                basket: [...state.basket, action.item]
-            };
         case 'REMOVE_FROM_BASKET':
             const newBasket = state.basket.filter((item) => (
                 item.title !== action.item.title
@@ -62,6 +55,14 @@ function reducer(state, action){
                 ...state,
                 basket: newBasket
             }
+        
+        case 'UPDATE_USER':
+            console.log("bhidu user update kar rhe hain");
+            return {
+                ...state,
+                user: action.item.user
+            }
+        
         default:
             return {state};
     }

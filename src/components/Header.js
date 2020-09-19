@@ -9,7 +9,7 @@ import { useStateValue } from './StateProvider';
 
 function Header() {
 
-    const [{basket}] = useStateValue()
+    const [{basket, user}, dispatch] = useStateValue()
 
 
     const calcTotalBasketItems = () => {
@@ -32,6 +32,7 @@ function Header() {
                 />
             </Link>
 
+            {/* TODO */}
             <div className="header__search">
                 <input type="text" className="header__searchInput"/>
                 <SearchIcon className="header__searchIcon"/>
@@ -44,10 +45,22 @@ function Header() {
 
                 {/* 1 */}
                 <Link to="/login" className="header__link">
-                    <div className="header__option">
-                        <span className="header__optionLineOne">Hello Aditya</span>
-                        <span className="header__optionLineTwo">Sign In</span>
-                    </div>
+                    
+                    {
+                        user == null 
+                            ?
+                            <div className="header__option">
+                                <span className="header__optionLineOne">Hello New User</span>
+                                <span className="header__optionLineTwo">Sign In</span>
+                            </div>
+                            :
+                            <div className="header__option">
+                                <span className="header__optionLineOne">Hello {user.displayName}</span>
+                                <span className="header__optionLineTwo">Profile</span>
+                            </div>
+
+                    }
+                    
                 </Link>
 
                 {/* 2 */}

@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header'
 import Home from './components/Home'
 import Checkout from './components/Checkout'
+import Login from './components/Login'
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,7 +26,7 @@ function App() {
           </Route>
 
           <Route path="/login">
-            <h1>Login</h1>
+            <Login />
           </Route>
 
           <Route path="/">

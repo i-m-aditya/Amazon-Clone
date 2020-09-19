@@ -1,0 +1,58 @@
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signIn {
+    display: flex;
+    flex-direction: column;
+    border-bottom: thick double #32a1ce;
+}
+
+.email, .password {
+    margin-bottom: 20px;
+    width: 300px;
+}
+
+.signIn > Button {
+    background-color: #F1CC6D;
+    margin-bottom: 20px;
+}
+
+.signIn > Button:hover {
+    background-color: darkgrey;
+}
+
+.signUp {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.signUp > Button  {
+    background-color: #F1CC6D;
+    margin-left: 10px;
+    width: 100px;
+}
+
+.app__modalImage {
+    object-fit: contain;
+    height: 100px;
+    width: 100px;
+}
+
+.app__signup {
+    display: flex;
+    flex-direction: column;
+}
+
+.app__signup > Button {
+    margin-top: 10px;
+}
+
+.signOut {
+    position: absolute;
+    left: 45%;
+    top: 45%;
+}
